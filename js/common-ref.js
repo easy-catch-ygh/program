@@ -35,7 +35,7 @@ document.write('<script src="/js/layer.js" ></script>')
 document.write('<script src="/js/api/server-api.js" ></script>')
 document.write('<script src="/js/api/server-url.js" ></script>')
 //加载导航栏/注脚
-document.write('<script type="text/javascript">$(function () { $(\'.nav_frame\').load(\'/pages/component/nav.html\');$(".html-foot").load("/pages/component/foot.html"); ' +
+document.write('<script type="text/javascript">$(function () { $(\'.nav_frame\').load(\'/pages/component/front/nav.html\');$(".html-foot").load("/pages/component/front/foot.html"); ' +
     '$(\'body\').append(\'\t<div class="gototop js-top"><a href="javascript:window.scrollTo( 0, 0 );" class="js-gotop"><i class="icon-arrow-up"></i></a></div>\')' +
     '   });</script>')
 

@@ -18,15 +18,16 @@ var server = {
         } else {
             paraData = formDom;
         }
+        var url = urlObj.url.indexOf("http://") > 0 || urlObj.url.indexOf("https://") > 0 ? urlObj.url:baseSever.httpUrl + urlObj.url;
         $.ajax({
-            url: urlObj.url.indexOf("http://") > 0 || urlObj.url.indexOf("https://") > 0 ? urlObj.url:url.httpUrl + urlObj.url,
+            url: url,
             type: urlObj.type,
             dataType: "json",
             async: false,  //改为同步请求，防止用户快速点击菜单导致报出的系统异常
             contentType: "application/json;charset=utf-8",
             data: paraData,
             success: function (data) {
-                One.maskHide();
+                server.maskHide();
                 if (!data.success) {
                     if (data.code == '-2') {
                         alert(data.message);
@@ -36,7 +37,6 @@ var server = {
                         top.location.href = curPath.substring(0, pos);
                         return;
                     }
-
                 }
                 sFun(data);
             },
@@ -47,6 +47,7 @@ var server = {
                     return;
                 }
                 alert("系统出错");
+                window.location.href = window.location.href
                 // top.window.location.href = httpUrl + "/login.html";
             },
             beforeSend: function (request) {

@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" > </meta>
+</head>
+<!-- Drawer -->
+<aside class="app-layout-drawer">
+
+    <!-- Drawer scroll area -->
+    <div class="app-layout-drawer-scroll">
+        <!-- Drawer logo -->
+        <div id="logo" class="drawer-header">
+            <a href="index.html"><img class="img-responsive" src="/images/backend/logo/logo-backend.png" title="AppUI" alt="AppUI" /></a>
+        </div>
+
+        <!-- Drawer navigation -->
+        <div class="drawer-main" style="width: 100%;position: absolute;margin-top: 0px;"></div>
+        <nav class="drawer-main">
+            <ul class="nav nav-drawer">
+
+                <li class="nav-drawer-header" >Apps</li>
+
+                <li class="nav-item active">
+                    <a onclick="changeTab(this,'/pages/backend/index.html' , 0)"><i class="ion-ios-speedometer-outline"></i> Dashboard</a>
+                </li>
+
+                <li class=" nav-drawer-header">Components</li>
+
+                <li class="nav-item nav-item-has-subnav" onclick="changeTab(this,'' , 1)">
+                    <a href="javascript:void(0)"><i class="ion-ios-calculator-outline"></i> UI Elements</a>
+                    <ul class="nav nav-subnav">
+                        <li>
+                            <a onclick="changeTab(this,'/pages/backend/base_ui_typography.html' , 1)">Buttons</a>
+                        </li>
+                        <li>
+                            <a onclick="changeTab(this,'/pages/backend/base_ui_widgets.html' , 1)">Cards</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-item-has-subnav" onclick="changeTab(this,'' , 2)">
+                    <a href="javascript:void(0)"><i class="ion-ios-compose-outline"></i> Forms</a>
+                    <ul class="nav nav-subnav">
+                        <li>
+                            <a onclick="changeTab(this,'' , 2)">Elements</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- End drawer navigation -->
+
+        <div class="drawer-footer">
+            <p class="copyright">Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div>
+    </div>
+    <!-- End drawer scroll area -->
+</aside>
+<script type="text/javascript">
+    //切换菜单
+    function changeTab(event, uri, num) {
+        sessionStorage.setItem('tabNum', num);
+        if(uri != '' &&  uri != undefined)
+            window.location.href = uri;
+        mune();
+    }
+    //初始化加载页面
+    $(function () {
+        mune();
+        App.initHelpers('slick');
+    })
+    //控制菜单样式
+    function  mune() {
+        var needOpen = false;
+        var tabNum = sessionStorage.getItem('tabNum') == undefined ? 0 : sessionStorage.getItem('tabNum');
+        if($($('.nav-item')[tabNum]).attr('class').indexOf("open") >=0 ){
+            needOpen = true;
+        }
+        $('.nav-item').removeClass('active')
+        $('.nav-item').removeClass('open')
+        $($('.nav-item')[tabNum]).addClass("active");
+        if(!needOpen )
+            $($('.nav-item')[tabNum]).addClass("open");
+    }
+</script>
+</html>
+
