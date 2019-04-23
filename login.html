@@ -26,17 +26,17 @@
     <form class='login_fields'>
         <div class='login_fields__user'>
             <div class='icon'>
-                <img src='images/user_icon_copy.png'>
+                <img src='images/front/user_icon_copy.png'>
             </div>
             <input placeholder='用户名/手机号' type='text' name="name">
             <div class='validation'>
-                <img src='images/tick.png'>
+                <img src='images/front/tick.png'>
             </div>
             </input>
         </div>
         <div class='login_fields__password'>
             <div class='icon'>
-                <img src='images/lock_icon_copy.png'>
+                <img src='/images/front/lock_icon_copy.png'>
             </div>
             <input placeholder='密码' type='password' name="password">
             <div class='validation'>
@@ -59,7 +59,7 @@
     </div>
 </div>
 <div class='authent'>
-    <img src='images/puff.svg'>
+    <img src='/assets/fontawesome-webfont.svg'>
     <p>认证中...</p>
 </div>
 
@@ -97,8 +97,8 @@
                     // $('.login div').fadeOut(123);
                     $('.success').fadeIn();
                     setTimeout(function () {
-                        window.location.href = "/pages/students/students.html";
-                    }, 1500);
+                        window.location.href = "/pages/backend/index.html";
+                    }, 1000);
                 } else {
                     $($('.success').find('h2')).html('认证失败');
                     $($('.success').find('p')).html(res.message);
@@ -107,7 +107,7 @@
                     $('.success').fadeIn();
                     setTimeout(function () {
                         window.location.href = window.location.href;
-                    }, 1500);
+                    }, 1000);
                 }
             }, function (err) {
                 $('.authent').show().animate({right: 90}, {

@@ -33,6 +33,6 @@ document.write('<script src="/js/jquery.slimscroll.min.js"></script>')
 document.write('<script src="/js/jquery.scrollLock.min.js"></script>')
 document.write('<script src="/js/jquery.placeholder.min.js"></script>')
 //加载导航栏/注脚
-document.write('<script type="text/javascript">$(function () { $(\'.app-layout-drawer\').load(\'/pages/component/backend/nav.html\');$(".html-foot").load("/pages/component/backend/foot.html"); ' +
+document.write('<script type="text/javascript">$(function () { $(\'.app-layout-drawer_load\').load(\'/pages/component/backend/nav.html\');$(".html-foot").load("/pages/component/backend/foot.html"); ' +
     '$(\'body\').append(\'\t<div class="gototop js-top"><a href="javascript:window.scrollTo( 0, 0 );" class="js-gotop"><i class="icon-arrow-up"></i></a></div>\')' +
     '   });</script>')

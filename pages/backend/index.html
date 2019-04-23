@@ -15,9 +15,8 @@
         <div class="app-layout-canvas">
             <div class="app-layout-container">
                 <!--Drawer-->
-                <div class="app-layout-drawer"></div>
-                <!-- Header -->
-                <div class="app-layout-header" ></div>
+                <div class="app-layout-drawer_load"></div>
+
                 <main class="app-layout-content">
 
                     <!-- Page Content -->
@@ -53,7 +52,6 @@
                                 </a>
                             </div>
                             <!-- .col-sm-6 -->
-
                             <div class="col-sm-6 col-lg-3">
                                 <a class="card bg-blue bg-inverse" href="javascript:void(0)">
                                     <div class="card-block clearfix">
@@ -68,7 +66,6 @@
                                 </a>
                             </div>
                             <!-- .col-sm-6 -->
-
                             <div class="col-sm-6 col-lg-3">
                                 <a class="card bg-purple bg-inverse" href="javascript:void(0)">
                                     <div class="card-block clearfix">
@@ -311,14 +308,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- .card-block -->
                                 </div>
-                                <!-- .card -->
-                                <!-- End Yearly summary widget -->
                             </div>
-                            <!-- .col-lg-8 -->
-
-                            <!-- Server load Widget -->
                             <div class="col-lg-4">
                                 <div class="card">
                                     <div class="card-header bg-purple bg-inverse">
@@ -334,24 +325,14 @@
                                         <div class="js-flot-live" style="height: 207px;"></div>
                                     </div>
                                 </div>
-                                <!-- .card -->
                             </div>
-                            <!-- End Server load Widget // .col-lg-4 -->
                         </div>
-                        <!-- .row -->
                     </div>
-                    <!-- .container-fluid -->
-                    <!-- End Page Content -->
-
                 </main>
 
             </div>
-            <!-- .app-layout-container -->
         </div>
-        <!-- .app-layout-canvas -->
 
-        <!-- Apps Modal -->
-        <!-- Opens from the button in the header -->
         <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-sm modal-dialog modal-dialog-top">
                 <div class="modal-content">
@@ -407,9 +388,6 @@
         <!--<script src="assets/js/plugins/flot/jquery.flot.resize.min.js"></script>-->
         <!-- Page JS Code -->
 
-    <script type="text/javascript" >
-        $('.app-layout-header').load('/pages/component/backend/head.html');
-    </script>
     </body>
 
 </html>
